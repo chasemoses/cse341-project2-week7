@@ -5,7 +5,7 @@
     "description": "API endpoints meant for customers to access products, as well as those authorized to access inventory, designs, and updating products.",
     "version": "1.0.0"
   },
-  "host": "https://cse341-project2-week06.herokuapp.com/",
+  "host": "cse341-project2-week06.herokuapp.com/",
   "basePath": "/",
   "tags": [
     {

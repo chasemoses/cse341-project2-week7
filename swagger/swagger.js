@@ -6,7 +6,7 @@ const doc = {
     description: 'API endpoints meant for customers to access products, as well as those authorized to access inventory, designs, and updating products.',
   },
   host: 'cse341-project2-week06.herokuapp.com/',
-  schemes: ['http', 'https'],
+  schemes: ['https','http'],
   tags: [
       {
           name: 'Products',
