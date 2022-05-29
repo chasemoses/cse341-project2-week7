@@ -8,18 +8,18 @@ const products = require('../controllers/products');
 router.get('/products', products.getProducts);
 
 
-// // GET Product
-// router.get('/products/:id', products.getProduct);
+// GET Product
+router.get('/products/:id', products.getProductById, products.getProduct);
 
 
 // POST Product (This should be restricted as we don't want customers creating products.)
 router.post('/products', products.createProducts);
 
-// // Delete Product
-// router.delete('products:id', products.deleteProduct);
+// Delete Product
+router.delete('/products/:id', products.getProductById, products.deleteProduct);
 
-// // Update Product (Probably restrict this to authorized users.)
-// router.put('/products/:id', products.updateProduct);
+// Update Product (Probably restrict this to authorized users.)
+router.put('/products/:id', products.getProductById, products.updateProduct);
 
 
 

@@ -4,22 +4,22 @@ const router = require('express').Router();
 // Require Controller
 const inventory = require('../controllers/inventory');
 
-// GET Products
+// GET Inventory items
 router.get('/inventory', inventory.getInventoryItems);
 
 
-// // GET Product
-// router.get('/products/:id', products.getProduct);
+// GET Inventory Item
+router.get('/inventory/:id', inventory.getInventoryById, inventory.getInventoryItem);
 
 
-// POST Product (This should be restricted as we don't want customers creating products.)
+// POST Inventory Item (This should be restricted as we don't want customers creating products.)
 router.post('/inventory', inventory.createInventoryItem);
 
-// // Delete Product
-// router.delete('products:id', products.deleteProduct);
+// Delete Inventory Item
+router.delete('/inventory/:id', inventory.getInventoryById, inventory.deleteInventoryItem);
 
-// // Update Product (Probably restrict this to authorized users.)
-// router.put('/products/:id', products.updateProduct);
+// Update Inventory Item (Probably restrict this to authorized users.)
+router.put('/inventory/:id', inventory.getInventoryById, inventory.updateInventoryItem);
 
 
 

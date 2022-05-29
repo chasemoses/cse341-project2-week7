@@ -4,22 +4,22 @@ const router = require('express').Router();
 // Require Controller
 const design = require('../controllers/designs');
 
-// GET Products
+// GET Designs
 router.get('/designs', design.getDesigns);
 
 
-// // GET Product
-// router.get('/products/:id', products.getProduct);
+// // GET Design
+router.get('/designs/:id', design.getDesignById, design.getDesign);
 
 
-// POST Product (This should be restricted as we don't want customers creating products.)
+// POST Design (This should be restricted as we don't want customers creating Designs.)
 router.post('/designs', design.createDesignItem);
 
-// // Delete Product
-// router.delete('products:id', products.deleteProduct);
+// Delete Design
+router.delete('/designs/:id', design.getDesignById, design.deleteDesign);
 
-// // Update Product (Probably restrict this to authorized users.)
-// router.put('/products/:id', products.updateProduct);
+// Update Design (Probably restrict this to authorized users.)
+router.put('/designs/:id', design.getDesignById, design.updateDesign);
 
 
 
