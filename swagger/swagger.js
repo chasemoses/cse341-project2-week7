@@ -5,7 +5,7 @@ const doc = {
     title: 'Pink Elephant Creation APIs',
     description: 'API endpoints meant for customers to access products, as well as those authorized to access inventory, designs, and updating products.',
   },
-  host: 'cse341-project2-week06.herokuapp.com',
+  host: ['localhost:8080/', 'cse341-project2-week07.herokuapp.com'],
   schemes: ['https','http'],
   tags: [
       {
