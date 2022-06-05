@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const {requiresAuth} = require('express-openid-connect')
 
 
 // Require Controller
@@ -13,13 +14,13 @@ router.get('/products/:id', products.getProductById, products.getProduct);
 
 
 // POST Product (This should be restricted as we don't want customers creating products.)
-router.post('/products', products.createProducts);
+router.post('/products', requiresAuth(), products.createProducts);
 
 // Delete Product
-router.delete('/products/:id', products.getProductById, products.deleteProduct);
+router.delete('/products/:id', requiresAuth(), products.getProductById, products.deleteProduct);
 
 // Update Product (Probably restrict this to authorized users.)
-router.put('/products/:id', products.getProductById, products.updateProduct);
+router.put('/products/:id', requiresAuth(), products.getProductById, products.updateProduct);
 
 
 
