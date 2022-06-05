@@ -1,5 +1,7 @@
 const Inventory = require('../models/inventory');
 
+const {requiresAuth } = require('express-openid-connect');
+
 const getInventoryItems = async (req, res) => {
 
     // #swagger.tags = ['Inventory']
@@ -8,10 +10,11 @@ const getInventoryItems = async (req, res) => {
     try {
         const inventory = await Inventory.find();
         res.status(200).json(inventory);
+
     } catch(err) {
         res.status(500).json({message: err.message});
-    }
-
+        
+    } 
 }
 const getInventoryItem = async (req, res) => {
 
