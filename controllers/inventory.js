@@ -1,6 +1,5 @@
 const Inventory = require('../models/inventory');
 
-const {requiresAuth } = require('express-openid-connect');
 
 const getInventoryItems = async (req, res) => {
 
